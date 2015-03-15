@@ -14,6 +14,9 @@ public class UtilsTest {
 
   @Test
   public void itShouldBePossibleToGetANewLineOnWindows() {
+    //
+    System.out.println("windows test");
+    //
     String lines = "hello\r\nworld\r\n";
     String[] r1 = Utils.getNextLine(lines);
     String[] e1 = {"hello\r\n", "world\r\n"};
@@ -25,6 +28,9 @@ public class UtilsTest {
 
   @Test
   public void itShouldBePossibleToGetANewLineOnMacOS9() {
+      //
+    System.out.println("mac test");
+    //
     String lines = "hello\rworld\r";
     String[] r1 = Utils.getNextLine(lines);
     String[] e1 = {"hello\r", "world\r"};
@@ -36,6 +42,9 @@ public class UtilsTest {
 
   @Test
   public void itShouldBePossibleToGetANewLineOnUnix() {
+      //
+    System.out.println("unix test");
+    //
     String lines = "hello\nworld\n";
     String[] r1 = Utils.getNextLine(lines);
     String[] e1 = {"hello\n", "world\n"};

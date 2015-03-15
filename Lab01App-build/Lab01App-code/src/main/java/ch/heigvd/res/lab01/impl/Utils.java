@@ -21,6 +21,18 @@ public class Utils {
    */
   public static String[] getNextLine(String lines) {
     throw new UnsupportedOperationException("The student has not implemented this method yet.");
+    //System.out.println("\n-Original string:");
+    //System.out.println("\"" + lines + "\"");
+    /*String[] split = new String[2];
+    if (!lines.contains("\\r") && !lines.contains("\\n") && !lines.contains("\\r\\n")) {
+        split = {"", lines};
+    } else {
+        split = lines.split("(?<=\\r\\n|[\\r\\n])", 2);
+    }
+    /*System.out.println("\n-Split string:");
+    for (String s : split) System.out.print("\"" + s + "\",");
+    System.out.println("\n----------");*/
+    //return split;
   }
 
 }
