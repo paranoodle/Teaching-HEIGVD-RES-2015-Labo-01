@@ -126,9 +126,10 @@ public class Application implements IApplication {
     for(String tag : quote.getTags()) {
         dir += "/" + tag;
     }
-    System.out.println("-- " + new File(dir).mkdirs());
+    //System.out.println("-- " + new File(dir).mkdirs());
+    new File(dir).mkdirs();
     dir += "/" + filename;
-    System.out.println("--- " + dir);
+    //System.out.println("--- " + dir);
     Writer writer = new OutputStreamWriter(new FileOutputStream(dir));
     writer.write(text);
     writer.close();
@@ -143,6 +144,11 @@ public class Application implements IApplication {
     explorer.explore(new File(WORKSPACE_DIRECTORY), new IFileVisitor() {
       @Override
       public void visit(File file) {
+          try {
+            writer.write(file.getPath() + "\n");
+          } catch (IOException ex) {
+            LOG.log(Level.SEVERE, null, ex);
+          }
         /*
          * There is a missing piece here. Notice how we use an anonymous class here. We provide the implementation
          * of the the IFileVisitor interface inline. You just have to add the body of the visit method, which should
@@ -154,7 +160,7 @@ public class Application implements IApplication {
   
   @Override
   public String getAuthorEmail() {
-    throw new UnsupportedOperationException("The student has not implemented this method yet.");
+    return "eleonore.dagostino@heig-vd.ch";
   }
 
   @Override
